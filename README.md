@@ -1,6 +1,6 @@
 # Car-Assist Database
 
-![Car-Assist Logo](assets/image.png)
+![Car-Assist Logo](assets/car_assist_db.png)
 
 Este repositório contém o banco de dados do projeto **Car-Assist**, incluindo modelos conceituais, lógicos e scripts de criação e populamento de dados.
 
