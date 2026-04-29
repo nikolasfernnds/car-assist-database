@@ -16,7 +16,8 @@ CREATE TABLE tbl_usuario (
     email VARCHAR(100) NOT NULL UNIQUE,
     cpf VARCHAR(11) NOT NULL UNIQUE,
     data_nascimento DATE NULL,
-    senha VARCHAR(255) NOT NULL
+    senha VARCHAR(255) NOT NULL,
+    is_ativo BOOLEAN DEFAULT TRUE
 );
 
 CREATE TABLE tbl_veiculo (
@@ -25,7 +26,8 @@ CREATE TABLE tbl_veiculo (
     modelo VARCHAR(50) NOT NULL,
     cor VARCHAR(30) NOT NULL,
     score DECIMAL(5,2) DEFAULT 10.00,
-    ano INT NOT NULL
+    ano INT NOT NULL,
+    is_ativo BOOLEAN DEFAULT TRUE
 );
 
 CREATE TABLE tbl_tipo_manutencao (
@@ -83,6 +85,7 @@ CREATE TABLE tbl_gastos (
     valor DECIMAL(10,2) NOT NULL,
     fk_id_veiculo INT NOT NULL,
     fk_id_categoria INT NOT NULL,
+    is_ativo BOOLEAN DEFAULT TRUE,
     CONSTRAINT FK_gas_vei FOREIGN KEY (fk_id_veiculo) REFERENCES tbl_veiculo (id) ON DELETE CASCADE,
     CONSTRAINT FK_gas_cat FOREIGN KEY (fk_id_categoria) REFERENCES tbl_categoria_gasto (id)
 );
@@ -93,9 +96,10 @@ CREATE TABLE tbl_manutencao (
     data_manutencao DATETIME NOT NULL,
     custo DECIMAL(10,2) NOT NULL,
     quilometragem INT NOT NULL,
-    pecas TEXT NULL,
+    pecas VARCHAR(1000) NULL,
     oficina VARCHAR(100) NULL,
-    observacoes VARCHAR(255) NULL,
+    observacoes TEXT NULL,
+    is_ativo BOOLEAN DEFAULT TRUE,
     fk_id_tipo_manutencao INT NOT NULL,
     fk_id_usuario INT NOT NULL,
     fk_id_veiculo INT NOT NULL,
