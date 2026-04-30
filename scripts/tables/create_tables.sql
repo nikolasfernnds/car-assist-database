@@ -12,7 +12,22 @@ CREATE TABLE tbl_veiculo (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     placa VARCHAR(10) NOT NULL UNIQUE,
     modelo VARCHAR(50) NOT NULL,
-    cor VARCHAR(30) NOT NULL,
+    cor ENUM(
+        'AMARELO', 
+        'AZUL', 
+        'BRANCO', 
+        'CINZA', 
+        'DOURADO', 
+        'LARANJA', 
+        'MARROM', 
+        'PRATA', 
+        'PRETO', 
+        'ROSA', 
+        'ROXO', 
+        'VERDE', 
+        'VERMELHO', 
+        'FANTASIA'
+    ) NOT NULL,
     score DECIMAL(5,2) DEFAULT 10.00,
     ano INT NOT NULL,
     is_ativo BOOLEAN DEFAULT TRUE
@@ -116,7 +131,7 @@ CREATE TABLE tbl_usuario_servico (
 CREATE TABLE tbl_usuario_veiculo (
     fk_id_usuario INT NOT NULL,
     fk_id_veiculo INT NOT NULL,
-    papel_usuario VARCHAR(20) DEFAULT 'Proprietário',
+    papel_usuario ENUM('Proprietário', 'Editor', 'Visualizador') DEFAULT 'Proprietário',
     PRIMARY KEY (fk_id_usuario, fk_id_veiculo),
     CONSTRAINT FK_usu_vei_u FOREIGN KEY (fk_id_usuario) REFERENCES tbl_usuario (id) ON DELETE CASCADE,
     CONSTRAINT FK_usu_vei_v FOREIGN KEY (fk_id_veiculo) REFERENCES tbl_veiculo (id) ON DELETE CASCADE
