@@ -15,10 +15,10 @@ INSERT INTO tbl_tipo_manutencao (id, nome, valor_score, descricao) VALUES
 (5, 'Manutenção Corretiva', 2, 'Conserto de avarias');
 
 -- VEÍCULOS (SCORE 100.00 PADRÃO)
-INSERT INTO tbl_veiculo (id, placa, modelo, cor, score, ano, is_ativo) VALUES 
-(1, 'NIK2006', 'Civic G10', 'PRETO', 100.00, 2020, TRUE),
-(2, 'ABC1D23', 'Onix Turbo', 'BRANCO', 100.00, 2022, TRUE),
-(3, 'XYZ9K88', 'Corolla XRE', 'PRATA', 100.00, 2019, TRUE);
+INSERT INTO tbl_veiculo (id, placa, modelo, marca, cor, ano, is_ativo) VALUES 
+(1, 'NIK2006', 'Civic G10', 'Honda', 'PRETO', 2020, TRUE),
+(2, 'ABC1D23', 'Onix Turbo', 'Chevrolet', 'BRANCO', 2022, TRUE),
+(3, 'XYZ9K88', 'Corolla XRE', 'Toyota', 'PRATA', 2019, TRUE);
 
 -- VÍNCULO USUÁRIO-VEÍCULO
 INSERT INTO tbl_usuario_veiculo (fk_id_usuario, fk_id_veiculo, papel_usuario) VALUES 
