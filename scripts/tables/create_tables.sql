@@ -131,6 +131,9 @@ CREATE TABLE tbl_usuario_veiculo (
     fk_id_usuario INT NOT NULL,
     fk_id_veiculo INT NOT NULL,
     papel_usuario ENUM('Proprietário', 'Editor', 'Visualizador') DEFAULT 'Proprietário',
+    data_vinculo DATE NOT NULL,
+    data_desvinculo DATE NULL,
+    is_ativo BOOLEAN DEFAULT TRUE,
     PRIMARY KEY (fk_id_usuario, fk_id_veiculo),
     CONSTRAINT FK_usu_vei_u FOREIGN KEY (fk_id_usuario) REFERENCES tbl_usuario (id) ON DELETE CASCADE,
     CONSTRAINT FK_usu_vei_v FOREIGN KEY (fk_id_veiculo) REFERENCES tbl_veiculo (id) ON DELETE CASCADE
