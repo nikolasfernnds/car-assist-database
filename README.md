@@ -26,8 +26,6 @@ Antes de utilizar os scripts do projeto, é necessário possuir as seguintes fer
 | MySQL Workbench | 8.0+ |
 | Git | -- |
 
----
-
 ## Instalação
 
 Siga os passos abaixo para configurar o projeto localmente:
