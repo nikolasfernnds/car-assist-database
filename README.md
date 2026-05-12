@@ -32,26 +32,26 @@ Antes de utilizar os scripts do projeto, é necessário possuir as seguintes fer
 
 Siga os passos abaixo para configurar o projeto localmente:
 
-### 1 - Clonar o repositório
+#### 1 - Clonar o repositório
 
 ```
 git clone https://github.com/nikolasfernnds/car-assist-database.git
 ```
-### 2 - Acessar a pasta do projeto
+#### 2 - Acessar a pasta do projeto
 ```
 cd Car-Assist-database
 ```
 
 ## Executando os Scripts
-### 1 - Criação de tabelas
+#### 1 - Criação de tabelas
 ```
 source scripts/create_tables.sql;
 ```
-### 2 - Inserts
+#### 2 - Inserts
 ```
 source scripts/insert_sample_data.sql;
 ```
-### 3 - Views
+#### 3 - Views
 ```
 ```
 ---
